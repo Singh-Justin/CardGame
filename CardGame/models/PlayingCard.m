@@ -2,6 +2,24 @@
 
 @implementation PlayingCard
 
+- (int) match:(Card *) card{
+    int score = 0;
+    
+    
+    if([card isKindOfClass:[PlayingCard class]]){
+        PlayingCard *playingCard = (PlayingCard *)card;
+        
+        if([self.suit isEqualToString:playingCard.suit]){
+            score = 1;
+        }
+        else if(self.rank == playingCard.rank){
+            score = 4;
+        }
+    }
+    
+    return score;
+}
+
 - (NSString *) contents{
     NSArray *rankStrings = [PlayingCard rankStrings];
     return [rankStrings[self.rank] stringByAppendingString:self.suit];

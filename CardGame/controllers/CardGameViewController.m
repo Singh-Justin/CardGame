@@ -23,7 +23,6 @@
 }
 
 - (IBAction)handleCardPress:(UIButton *)sender {
-    
     NSUInteger cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardIndex];
     [self updateUI];
@@ -35,10 +34,12 @@
         
         Card *card = [self.game cardAtIndex:cardIndex];
         
-        [cardButton setTitle:[self setCardTitle:card] forState:(UIControlStateNormal)];
-        [cardButton setBackgroundImage:[self setCardBackgroundImage:card] forState:(UIControlState)UIControlStateNormal];
-        
-        cardButton.enabled = !card.isMatched;
+        if(card){
+            [cardButton setTitle:[self setCardTitle:card] forState:(UIControlStateNormal)];
+            [cardButton setBackgroundImage:[self setCardBackgroundImage:card] forState:(UIControlState)UIControlStateNormal];
+            cardButton.enabled = !card.isMatched;
+            
+        }
     }
 }
 

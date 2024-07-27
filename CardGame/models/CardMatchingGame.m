@@ -39,7 +39,7 @@ static const int COST_TO_CHOOSE = 1;
         if(card.isChosen){
             card.isChosen = NO;
         }else{
-            for(Card * cardItem in self.cards){
+            for(Card *cardItem in self.cards){
                 if(cardItem.isChosen && !cardItem.isMatched){
                     int score = [card match:cardItem];
                     
@@ -53,8 +53,6 @@ static const int COST_TO_CHOOSE = 1;
                         cardItem.isChosen = FALSE;
                     }
                     
-                   
-                    
                     break;
                 }
             }
@@ -66,6 +64,9 @@ static const int COST_TO_CHOOSE = 1;
 
 
 - (Card *) cardAtIndex:(NSUInteger)index {
+    if(![self.cards count]) return nil;
+    
+    
     return self.cards[index];
 }
 
