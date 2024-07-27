@@ -148,11 +148,19 @@
                                     <action selector="handleCardPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hTW-Kf-JpP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43U-EZ-2OT">
+                                <rect key="frame" x="16" y="416" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
                     <connections>
+                        <outlet property="scoreLabel" destination="43U-EZ-2OT" id="04j-uh-kf7"/>
                         <outletCollection property="cardButtons" destination="jlY-gz-s56" id="te1-mz-kfj"/>
                         <outletCollection property="cardButtons" destination="RUg-fx-I4D" id="ZfP-eQ-x7G"/>
                         <outletCollection property="cardButtons" destination="1hy-bn-tyn" id="biF-Tx-YM5"/>
